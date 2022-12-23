@@ -1,0 +1,15 @@
+:root {
+  --title: #050609;
+  --subtitle: #0D0C1D;
+  --paragraph: #C8C6D7;
+  --primary: #2176FF;  
+  --primary-alt: #3116ca;
+  --tertiary: #8F3985;
+  --tertiary-alt: #4C2A85;
+  --bg-color: #FFFFFF;
+}
+body {
+  margin: 48px 24px;
+  background-color: var(--paragraph);
+  font-family: 'Poppins', sans-serif;
+}
