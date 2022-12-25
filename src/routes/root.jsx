@@ -1,5 +1,5 @@
 import { createBrowserRouter } from 'react-router-dom'
-import { LoginPage } from '../auth/pages'
+import { LoginPage, RegisterPage } from '../auth/pages'
 import { CalendarPage, ErrorPage } from '../calendar/pages'
 import { ProtectedRoute } from './'
 
@@ -13,7 +13,11 @@ export const router = createBrowserRouter([
     errorElement: <ErrorPage />,
   },
   {
-    path: '/auth/*',
+    path: '/auth/login',
     element: <LoginPage />,
+  },
+  {
+    path: 'auth/register',
+    element: <RegisterPage />
   }
 ])

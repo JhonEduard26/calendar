@@ -1,4 +1,4 @@
-import './LoginPage.css'
+import './login.css'
 
 export const LoginPage = () => {
   return (
@@ -8,17 +8,17 @@ export const LoginPage = () => {
         <form>
           <h1>Welcome!</h1>
           <label htmlFor="email">Email</label>
-          <input type="email" name='email' id='email'/>
+          <input type="email" name='email' id='email' />
 
           <label htmlFor="password">Password</label>
           <input type="password" name="password" id="password" />
 
           <a href="#">Forgot password?</a>
 
-          <input type="button" value="Login" />
+          <input type="submit" value="Login" />
         </form>
 
-        <a href="#">Create account</a>
+        <a href="register">Create account</a>
       </div>
     </div>
   )
