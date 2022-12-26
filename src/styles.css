@@ -8,8 +8,10 @@
   --tertiary-alt: #4C2A85;
   --bg-color: #FFFFFF;
 }
+
 body {
-  margin: 48px 24px;
+  margin: 0;
+  padding: 0;
   background-color: var(--paragraph);
   font-family: 'Poppins', sans-serif;
 }

@@ -1,20 +1,16 @@
 .login__container {
   display: grid;
-  align-items: stretch;
-  grid-template-columns: 1fr 1fr;
-  height: 75vh;
-}
-.login--left {
-  background-color: var(--primary);
-}
-.login--right {
-  padding: 32px;
+  place-content: center;
+  height: 100vh;
 }
 form {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   row-gap: 4px;
+  width: 320px;
+  padding: 12px;
+  border-radius: 8px;
+  background-color: var(--bg-color);
 }
 label {
   color: var(--subtitle);
@@ -49,4 +45,10 @@ a {
 }
 a:hover {
   text-decoration: underline;
+}
+
+@media screen and (min-width: 720px){
+  form {
+    width: 568px;
+  }
 }

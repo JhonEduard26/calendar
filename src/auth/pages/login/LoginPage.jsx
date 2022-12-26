@@ -1,9 +1,9 @@
+import { Link } from 'react-router-dom'
 import './login.css'
 
 export const LoginPage = () => {
   return (
     <div className="login__container">
-      <div className='login--left'></div>
       <div className='login--right'>
         <form>
           <h1>Welcome!</h1>
@@ -16,9 +16,9 @@ export const LoginPage = () => {
           <a href="#">Forgot password?</a>
 
           <input type="submit" value="Login" />
+          <Link to="/auth/register">Create account</Link>
         </form>
 
-        <a href="register">Create account</a>
       </div>
     </div>
   )
