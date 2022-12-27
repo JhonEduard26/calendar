@@ -3,7 +3,7 @@ import { Calendar } from 'react-big-calendar'
 import 'react-big-calendar/lib/css/react-big-calendar.css'
 import { addHours } from 'date-fns'
 
-import { CalendarEvent, Navbar } from '../components'
+import { CalendarEvent, CalendarModal, Navbar } from '../components'
 import { localizer } from '../../helpers'
 
 const events = [
@@ -21,11 +21,11 @@ export const CalendarPage = () => {
   const [lastView, setLastView] = useState(localStorage.getItem('lastView') || 'week')
 
   const onDoubleClick = (event) => {
-    console.log({doubleClick: event})
+
   }
 
   const onSelect = (event) => {
-    console.log({click: event})
+    console.log({ click: event })
   }
 
   const onViewChanged = (event) => {
@@ -34,22 +34,25 @@ export const CalendarPage = () => {
 
   return (
     <>
-    <Navbar />
+      <Navbar />
 
-    <Calendar
-      localizer={localizer}
-      events={events}
-      startAccessor="start"
-      endAccessor="end"
-      defaultView={lastView}
-      style={{ height: 500 }}
-      components={{
-        event: CalendarEvent
-      }}
-      onDoubleClickEvent={onDoubleClick}
-      onSelectEvent={onSelect}
-      onView={onViewChanged}
-    />
+      <Calendar
+        localizer={localizer}
+        events={events}
+        startAccessor="start"
+        endAccessor="end"
+        defaultView={lastView}
+        style={{ height: 500 }}
+        components={{
+          event: CalendarEvent
+        }}
+        onDoubleClickEvent={onDoubleClick}
+        onSelectEvent={onSelect}
+        onView={onViewChanged}
+      />
+
+      <CalendarModal />
+
     </>
   )
 }
