@@ -7,12 +7,15 @@
   background-color: black;
   color: white;
 }
-.navbar div:nth-child(2){
+
+.navbar div:nth-child(2) {
   color: red;
 }
-div > i {
+
+div>i {
   margin-right: 8px;
 }
+
 .btn--exit {
   cursor: pointer;
   display: inline-flex;
@@ -25,20 +28,23 @@ div > i {
   background-color: rgb(202, 17, 17);
   color: white;
 }
+
 .btn--exit:hover {
   opacity: 0.8;
 }
 
 /* Modal */
-.ReactModalPortal > div{
+.ReactModalPortal>div {
   opacity: 0;
 }
+
 .ReactModalPortal .ReactModal__Overlay {
   z-index: 999;
   transition: opacity .2s ease-in-out;
   display: grid;
   place-items: center;
 }
+
 .modal-fondo {
   background-color: rgba(0, 0, 0, 0.3);
   bottom: 0;
@@ -47,12 +53,15 @@ div > i {
   top: 0;
   position: fixed;
 }
+
 .ReactModalPortal .ReactModal__Overlay--after-open {
   opacity: 1;
 }
+
 .ReactModalPortal .ReactModal__Overlay--before-close {
   opacity: 0;
 }
+
 .modal {
   background: white;
   border-radius: 5px;
@@ -60,4 +69,35 @@ div > i {
   width: 45%;
   outline: none;
   padding: 10px;
+}
+
+.modal__form-content {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.modal__form-content textarea {
+  resize: none;
+}
+
+.modal__form-content textarea:focus {
+  outline: auto;
+}
+
+.modal__form-content .save--button {
+  cursor: pointer;
+  height: 32px;
+  border-radius: 4px;
+  outline: 0;
+  border: 0;
+  padding: 4px;
+  background: rgb(33, 118, 255);
+  background: linear-gradient(90deg, rgba(33, 118, 255, 1) 0%, rgba(49, 22, 202, 1) 25%, rgba(76, 42, 133, 1) 85%);
+  color: var(--bg-color);
+  font-size: 0.8rem;
+}
+
+.modal__form-content .save--button:hover {
+  opacity: 0.8;
 }
