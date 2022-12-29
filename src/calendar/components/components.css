@@ -101,3 +101,13 @@ div>i {
 .modal__form-content .save--button:hover {
   opacity: 0.8;
 }
+
+.formValid {
+  outline: auto;
+  outline-color: black;
+}
+
+.formInvalid {
+  outline: auto;
+  outline-color: black;
+}

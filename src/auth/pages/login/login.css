@@ -20,10 +20,6 @@ input {
   padding: 12px 6px;
   border-radius: 8px;
   border: 1px solid lightgray;
-  outline: 0;
-}
-input:focus {
-  outline: auto;
 }
 input[type="submit"] {
   cursor: pointer;

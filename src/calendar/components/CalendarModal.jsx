@@ -1,55 +1,25 @@
-import { useState } from 'react'
-import { addHours } from 'date-fns'
-import Modal from 'react-modal'
+import { addHours, differenceInSeconds } from 'date-fns'
 import DatePicker from 'react-datepicker'
+import Modal from 'react-modal'
 import 'react-datepicker/dist/react-datepicker.css'
 
 import './components.css'
+import { useModal, useForm } from '../hooks'
 
 Modal.setAppElement('#root')
 
+const initialForm = {
+  title: 'jhon',
+  notes: 'bocanegra',
+  start: new Date(),
+  end: addHours(new Date(), 2)
+}
+
 export const CalendarModal = () => {
+  const {title, notes, start, end, onInputChange, onDateChanged} = useForm(initialForm)
 
-  let subtitle
-  const [modalIsOpen, setIsOpen] = useState(true)
+  const {modalIsOpen, onCloseModal, onSubmit, openModal} = useModal(start, end)
 
-  const onInputChange = ({ target }) => {
-
-    const { value, name } = target
-    setFormValues({
-      ...formValues,
-      [name]: value
-    })
-  }
-
-  const [formValues, setFormValues] = useState({
-    title: 'Jhon',
-    notes: 'Bocanegra',
-    start: new Date(),
-    end: addHours(new Date(), 2)
-  })
-
-  const { title, notes, start, end } = formValues
-
-  const onDateChanged = (event, changing) => {
-    setFormValues({
-      ...formValues,
-      [changing]: event
-    })
-  }
-
-  const openModal = () => {
-    setIsOpen(true)
-  }
-
-  const afterOpenModal = () => {
-    // references are now sync'd and can be accessed.
-    subtitle.style.color = '#f00'
-  }
-
-  const onCloseModal = () => {
-    setIsOpen(false)
-  }
 
   return (
     <Modal
@@ -61,7 +31,7 @@ export const CalendarModal = () => {
     >
       <h1> New Event </h1>
       <hr />
-      <form className='modal__form-content'>
+      <form className='modal__form-content' onSubmit={onSubmit}>
 
         <label htmlFor='startdate'>Date and time start</label>
         <DatePicker
@@ -83,13 +53,13 @@ export const CalendarModal = () => {
         <hr />
         <label htmlFor='title'>Title and notes</label>
         <input
-          type="text"
-          placeholder="Event title"
-          name="title"
-          value={title}
-          onChange={onInputChange}
           autoComplete="off"
-          id='title'
+          id="title"
+          name="title"
+          onChange={onInputChange}
+          placeholder="Event title"
+          type="text"
+          value={title}
         />
         <small id="emailHelp">Small description</small>
 
